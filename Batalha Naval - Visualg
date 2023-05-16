@@ -1,0 +1,105 @@
+Algoritmo "batalha naval"
+
+Var
+   mat, mat2 : vetor [1..6, 1..6] de inteiro
+   l,c, cont, pts : inteiro
+
+Inicio
+
+   para l de 1 ate 6 faca
+      para c de 1 ate 6 faca
+
+         mat[l,c] <- 8
+
+      fimpara
+   fimpara
+
+   Escreval ("")
+   Escreval ("")
+   Escreval ("")
+
+   mat2 [1,1] <- 1
+   mat2 [1,2] <- 3
+   mat2 [1,6] <- 1
+   mat2 [2,2] <- 3
+   mat2 [2,4] <- 1
+   mat2 [3,2] <- 3
+   mat2 [3,6] <- 1
+   mat2 [4,4] <- 2
+   mat2 [4,5] <- 2
+   mat2 [5,1] <- 2
+   mat2 [6,1] <- 2
+   mat2 [6,4] <- 1
+   mat2 [6,6] <- 1
+
+   para l de 1 ate 6 faca
+      para c de 1 ate 6 faca
+
+         escreva (" | ",mat[l,c], " | ")
+
+      fimpara
+      escreval ("")
+   fimpara
+
+   Escreval ("")
+   Escreval ("")
+   Escreval ("")
+
+   para cont de 1 ate 8 faca
+
+      Escreval ("Digite o valor da linha desejada")
+      leia (l)
+      Escreval ("Digite o valor da coluna desejada")
+      leia (c)
+
+      limpatela
+
+      Escreval ("")
+      Escreval ("")
+      Escreval ("")
+
+      se mat2[l,c] = 0 entao
+
+         pts <- pts + 0
+
+         mat[l,c] <- 0
+
+      senao
+
+         se mat2[l,c] = 1 entao
+
+            pts <- pts + 1
+
+            mat[l,c] <- 1
+         senao
+
+            se mat2[l,c] = 2 entao
+
+               pts <- pts + 2
+
+               mat[l,c] <- 2
+
+            senao
+
+               se mat2[l,c] = 3 entao
+
+                  pts <- pts + 3
+
+                  mat[l,c] <- 3
+
+               fimse
+            fimse
+         fimse
+      fimse
+      para l de 1 ate 6 faca
+         para c de 1 ate 6 faca
+
+            escreva (" | ", mat[l,c], " | ")
+
+         fimpara
+         escreval ("")
+      fimpara
+   fimpara
+
+   Escreval ("Você conseguiu " , pts, " pontos")
+fimalgoritmo
